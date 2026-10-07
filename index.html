@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NovaTech Solutions · Dashboard Analítico 2024</title>
+<style>
+:root{--bg:#F4F8FA;--dom:#B3EBF2;--acc:#4A9DAE;--ink:#2E6C7B;--cta:#FF8A65;--ctatext:#1E4A56;--card:#fff;--line:#D3E6EB;--bad:#D9534F;--badbg:#FBE3DF;--soft:#E3F6F9;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F2329;--card:#16313A;--ink:#BFE6EC;--line:#25454E;--dom:#1E4C57;--soft:#1B3B44;--badbg:#4A2A2A}}
+:root[data-theme="dark"]{--bg:#0F2329;--card:#16313A;--ink:#BFE6EC;--line:#25454E;--dom:#1E4C57;--soft:#1B3B44;--badbg:#4A2A2A}
+html{scroll-padding-top:70px;scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Inter","Segoe UI",system-ui,-apple-system,sans-serif}
+a{color:var(--acc)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:18px;height:56px;overflow-x:auto;white-space:nowrap}
+nav b{font-size:17px;margin-right:auto}nav b span{color:var(--acc)}
+nav a{text-decoration:none;font-size:14px;font-weight:600}
+.btn{display:inline-block;background:var(--cta);color:var(--ctatext);font-weight:700;padding:12px 24px;border-radius:999px;text-decoration:none;box-shadow:0 6px 16px -6px var(--cta);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.sec{background:var(--acc);color:#fff;box-shadow:none;font-size:14px;padding:8px 16px}
+.hero{background:linear-gradient(135deg,var(--dom),var(--soft) 70%);border-radius:0 0 32px 32px;padding:56px 0 48px}
+.hero small{display:inline-block;background:var(--card);color:var(--acc);font-weight:700;padding:4px 12px;border-radius:999px;font-size:13px}
+.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.1;margin:14px 0 12px;max-width:720px}
+.hero p{max-width:620px;margin:0 0 24px;font-size:18px}
+section{padding:44px 0 4px}
+h2{font-size:26px;margin:0 0 4px}.sub{margin:0 0 20px;opacity:.85}
+.grid{display:grid;gap:16px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:-34px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
+.k .l{font-size:13px;font-weight:600;opacity:.8}.k .v{font-size:30px;font-weight:800;line-height:1.2}.k .n{font-size:13px;opacity:.75}
+.k.bad{background:var(--badbg);border-color:var(--bad)}.k.bad .v{color:var(--bad)}
+.k .bar{height:4px;border-radius:4px;background:var(--dom);margin-bottom:10px}
+.two{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.row{display:grid;grid-template-columns:128px 1fr 74px;gap:10px;align-items:center;margin:9px 0;font-size:14px}
+.row .t{height:14px;background:var(--soft);border-radius:8px;position:relative;overflow:hidden}
+.row .t i{position:absolute;left:0;top:0;bottom:0;background:var(--dom);border-radius:8px}
+.row .t u{position:absolute;left:0;top:0;bottom:0;background:var(--acc);border-radius:8px}
+.row .a{text-align:right;font-weight:700}.row.bad .t u{background:var(--bad)}
+.tag{display:inline-block;font-size:11px;font-weight:700;background:var(--badbg);color:var(--bad);border-radius:6px;padding:1px 6px;margin-left:4px}
+.ch{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.ch .card b{font-size:18px}.ch .m{display:flex;justify-content:space-between;font-size:14px;border-top:1px solid var(--line);padding:5px 0}
+.scroll{overflow-x:auto}
+table{border-collapse:separate;border-spacing:5px;width:100%;min-width:420px;text-align:center;font-size:14px}
+th{font-size:13px}td.s{text-align:left;font-weight:600}td.h{border-radius:10px;padding:10px 4px;font-weight:700;color:#1E4A56}
+.ins{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.ins .card{border-left:6px solid var(--acc)}.ins .card.bad{border-left-color:var(--bad)}.ins .n1{font-weight:800;color:var(--acc)}
+.ins h3{margin:2px 0 6px;font-size:17px}.ins p{margin:0;font-size:15px}
+.cta{background:var(--dom);border-radius:28px;padding:36px 28px;text-align:center;margin:44px 0 24px}
+.cta h2{margin-bottom:8px}
+footer{padding:12px 0 36px;font-size:13px;opacity:.8}
+svg text{fill:var(--ink);font:12px "Inter","Segoe UI",sans-serif}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>Nova<span>Tech</span> · 2024</b><a href="#kpis">KPIs</a><a href="#mensual">Mensual</a><a href="#region">Regiones</a><a href="#canal">Canales</a><a href="#productos">Productos</a><a href="#sat">Satisfacción</a><a class="btn sec" href="#insights">Insights</a></div></nav>
+
+<header class="hero"><div class="wrap">
+<small>NovaTech Solutions · 2024</small>
+<h1>Dashboard de ventas 2024</h1>
+<p>Empresa B2B de tecnología en LATAM: 300 transacciones, 10 productos, 8 regiones y 4 canales, de enero a diciembre de 2024.</p>
+<a class="btn" href="#insights">Ver los 5 insights clave</a>
+</div></header>
+
+<main class="wrap">
+<div class="grid kpis" id="kpis"></div>
+
+<section id="mensual"><h2>Ingresos mensuales</h2><p class="sub">Ventas completadas. Pico en verano, valle en septiembre.</p>
+<div class="card"><div class="scroll"><svg id="m" viewBox="0 0 720 280" style="min-width:560px;width:100%"></svg></div></div></section>
+
+<section id="region"><h2>Distribución por región</h2><p class="sub">Ingresos (claro) y margen bruto (oscuro).</p>
+<div class="card" id="reg"></div></section>
+
+<section id="canal"><h2>Comparativa por canal</h2><p class="sub">Volumen, ticket y cancelaciones. “Margen/costo” es una aproximación al ROI: no hay costos comerciales en el archivo.</p>
+<div class="ch" id="can"></div></section>
+
+<section id="productos"><h2>Top productos</h2><p class="sub">Ranking por ingresos, con margen % por producto.</p>
+<div class="card" id="prod"></div></section>
+
+<section id="sat"><h2>Satisfacción por sector y tier</h2><p class="sub">Promedio 1–5 de la base de clientes. Celdas vacías: sin clientes en ese cruce.</p>
+<div class="card scroll" id="heat"></div></section>
+
+<section id="insights"><h2>5 insights principales</h2><p class="sub">Calculados sobre ventas completadas salvo que se indique.</p>
+<div class="grid ins" id="ins"></div></section>
+
+<div class="cta"><h2>Resumen del año</h2><p>Revisa de nuevo los indicadores clave de 2024.</p><a class="btn" href="#kpis">Volver a los KPIs</a></div>
+</main>
+<footer><div class="wrap">Fuente: datos de ventas 2024 de NovaTech Solutions. Regiones identificadas como R1–R8 (el archivo no incluye nombres). CAC y LTV no se calculan: faltan datos de costos de adquisición y retención.</div></footer>
+
+<script>
+const D={"kpi": {"ing": 258661, "mar": 176971, "marp": 68.4, "n": 215, "tk": 1203, "canc": 7.3, "ncanc": 22, "perd": 33616, "sat": 3.92, "tot": 300, "cli": 59, "pipe": 68344}, "mes": [19355, 25152, 13854, 12678, 21701, 36476, 32335, 30597, 10602, 14518, 16914, 24480], "mescanc": [11.1, 17.6, 11.1, 0.0, 10.0, 2.7, 2.9, 8.6, 19.0, 9.1, 0.0, 4.8], "reg": [["R1", 28717, 20217], ["R2", 49886, 34461], ["R3", 27885, 18195], ["R4", 43008, 30393], ["R5", 16864, 11139], ["R6", 18682, 12267], ["R7", 37032, 25402], ["R8", 36586, 24896]], "can": [["Directo", 64886, 50, 1298, 2.23, 7.6], ["Online", 68564, 62, 1106, 2.22, 7.1], ["Partner", 59446, 52, 1143, 2.21, 9.9], ["Telco", 65762, 51, 1289, 2.02, 5.1]], "prod": [["EdgeCompute Node", 63352, 39352, 62.1, 50], ["DataVault Enterprise", 46889, 33929, 72.4, 81], ["AI Analytics Suite", 30066, 21486, 71.5, 39], ["IoT Gateway Hub", 26664, 17054, 64.0, 31], ["BI Dashboard Pro", 20239, 14359, 70.9, 42], ["DevOps Pipeline", 20057, 14452, 72.1, 59], ["CloudSync Pro", 16729, 11799, 70.5, 58], ["SecureNet Shield", 15952, 11142, 69.8, 37], ["SmartFlow CRM", 13265, 9470, 71.4, 69], ["MobileFirst SDK", 5444, 3924, 72.1, 38]], "heat": {"tiers": ["Enterprise", "Mid-Market", "SMB"], "rows": [["Educación", 4.07, 3.67, null], ["Energía", 4.03, null, 3.8], ["Financiero", 3.88, null, 4.38], ["Gobierno", 3.83, 4.07, 3.85], ["Manufactura", 3.35, 4.35, 3.6], ["Retail", 3.61, 4.2, 3.5], ["Salud", 4.8, null, 4.0], ["Telecom", 3.45, 4.9, 4.07]]}, "sat_tier": {"Enterprise": 3.82, "Mid-Market": 4.11, "SMB": 3.99}};
+const $=s=>document.querySelector(s),f=n=>'$'+Math.round(n).toLocaleString('en-US'),K=n=>'$'+(n/1000).toFixed(1)+'K';
+const M=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],k=D.kpi;
+// KPIs
+const cards=[['Ingresos totales',f(k.ing),'Ventas completadas'],['Margen bruto',f(k.mar),k.marp+'% de margen'],['Ticket promedio',f(k.tk),k.n+' ventas completadas'],['Tasa de cancelación',k.canc+'%',k.ncanc+' ventas · '+f(k.perd)+' perdidos',1],['Satisfacción',k.sat+' / 5','Promedio de 60 clientes'],['Clientes con compra',k.cli,'De 60 en la base'],['Pipeline abierto',f(k.pipe),'Pendiente + en proceso'],['Ventas totales',k.tot,'Todos los estados']];
+$('#kpis').innerHTML=cards.map(c=>`<div class="card k ${c[3]?'bad':''}"><div class="bar"></div><div class="l">${c[0]}</div><div class="v">${c[1]}</div><div class="n">${c[2]}</div></div>`).join('');
+// Mensual
+const mx=40000,W=720,H=280,L=44,B=30,T=26,bw=(W-L-10)/12;let s='';
+[0,10,20,30,40].forEach(g=>{const y=H-B-(H-B-T)*g/40;s+=`<line x1="${L}" x2="${W-6}" y1="${y}" y2="${y}" stroke="var(--line)"/><text x="${L-6}" y="${y+4}" text-anchor="end">${g}K</text>`});
+const hi=D.mes.indexOf(Math.max(...D.mes)),lo=D.mes.indexOf(Math.min(...D.mes));
+D.mes.forEach((v,i)=>{const h=(H-B-T)*v/mx,x=L+i*bw+6,y=H-B-h,c=i==lo?'var(--bad)':i==hi?'var(--cta)':'var(--acc)';
+s+=`<rect x="${x}" y="${y}" width="${bw-12}" height="${h}" rx="6" fill="${c}"><title>${M[i]}: ${f(v)} · cancelaciones ${D.mescanc[i]}%</title></rect><text x="${x+(bw-12)/2}" y="${H-10}" text-anchor="middle">${M[i]}</text>`;
+if(i==hi||i==lo)s+=`<text x="${x+(bw-12)/2}" y="${y-6}" text-anchor="middle" style="font-weight:700">${i==hi?'Pico ':'Valle '}${K(v)}</text>`});
+$('#m').innerHTML=s;
+// Barras genéricas
+const rows=(a,mx)=>a.map(r=>`<div class="row ${r.bad?'bad':''}"><div>${r.l}${r.tag?`<span class="tag">${r.tag}</span>`:''}</div><div class="t" title="${r.tt||''}"><i style="width:${r.i/mx*100}%"></i><u style="width:${r.u/mx*100}%"></u></div><div class="a">${r.a}</div></div>`).join('');
+$('#reg').innerHTML=rows(D.reg.map(r=>({l:r[0],i:r[1],u:r[2],a:K(r[1]),tt:'Margen '+f(r[2])})),Math.max(...D.reg.map(r=>r[1])));
+$('#prod').innerHTML=rows(D.prod.map(p=>({l:p[0],i:p[1],u:p[2],a:K(p[1]),tag:p[3]<65?'Margen '+p[3]+'%':'',bad:p[3]<65,tt:'Margen '+p[3]+'% · '+p[4]+' uds'})),D.prod[0][1]);
+// Canales
+const mxc=Math.max(...D.can.map(c=>c[1]));
+$('#can').innerHTML=D.can.map(c=>`<div class="card"><b>${c[0]}</b><div class="t" style="height:10px;background:var(--soft);border-radius:8px;margin:8px 0 10px"><i style="display:block;height:100%;width:${c[1]/mxc*100}%;background:var(--acc);border-radius:8px"></i></div>
+<div class="m"><span>Ingresos</span><b>${f(c[1])}</b></div><div class="m"><span>Ventas</span><b>${c[2]}</b></div><div class="m"><span>Ticket promedio</span><b>${f(c[3])}</b></div><div class="m"><span>Margen / costo</span><b>${c[4]}x</b></div><div class="m"><span>Cancelación</span><b style="color:${c[5]>9?'var(--bad)':'inherit'}">${c[5]}%</b></div></div>`).join('');
+// Heatmap
+const col=v=>{if(v==null)return'transparent';if(v<3.6)return'#F3B8AE';const t=Math.min(1,(v-3.6)/1.3),a=[179,235,242],b=[74,157,174];return`rgb(${a.map((x,i)=>Math.round(x+(b[i]-x)*t)).join(',')})`};
+$('#heat').innerHTML='<table><tr><th></th>'+D.heat.tiers.map(t=>`<th>${t}</th>`).join('')+'</tr>'+D.heat.rows.map(r=>`<tr><td class="s">${r[0]}</td>`+r.slice(1).map(v=>`<td class="h" style="background:${col(v)}">${v==null?'<span style="opacity:.4">–</span>':v.toFixed(2)}</td>`).join('')+'</tr>').join('')+'</table><p style="font-size:13px;margin:10px 4px 0">Tono coral: satisfacción menor a 3.6.</p>';
+// Insights
+const I=[['Estacionalidad marcada','Junio a agosto concentran el 38% de los ingresos (junio: $36.5K). Septiembre cae a $10.6K, el mínimo del año.'],
+['Rentabilidad vs. volumen','EdgeCompute Node lidera con $63.4K (24.5% del total), pero su margen es 62.1%, contra 70–72% del resto. DataVault Enterprise aporta $46.9K con 72.4% de margen.'],
+['Canales parejos, con matices','Online lidera en ingresos ($68.6K); Directo tiene el ticket más alto ($1,298); Telco cancela menos (5.1%). Partner cancela más (9.9%).'],
+['Regiones concentradas','R2 lidera con $49.9K (19.3%), seguida de R4 con $43.0K. R5 y R6 son las más bajas, bajo $19K cada una.'],
+['Cancelaciones y satisfacción','22 ventas canceladas suman $33.6K; septiembre llega a 19% de cancelación. Satisfacción global de 3.92: Enterprise (3.82) está por debajo de Mid-Market (4.11).',1]];
+$('#ins').innerHTML=I.map((x,i)=>`<div class="card ${x[2]?'bad':''}"><div class="n1">0${i+1}</div><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join('');
+</script>
+</body>
+</html>
